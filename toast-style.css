@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgb(171, 236, 171);
+  padding: 5px 20px;
+  border-radius: 25px;
+  border: 15px solid rgb(80, 231, 228);
+}
+
+.toast h4 {
+  font-size: 4rem;
+  color: #eea2b6;
+  font-family: "Tektur", sans-serif;
+}
