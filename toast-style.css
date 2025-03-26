@@ -24,7 +24,7 @@ rgb(171, 236, 171)
 }
 
 .toast.out-effect {
-  animation: anim 1s ease-in-out;
+  animation: anim 1s ease-in-out forwards;
   animation-iteration-count: 1;
 }
 
