@@ -1,17 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
 
+/* Old Colors
+rgb(80, 231, 228)
+#eea2b6
+rgb(171, 236, 171)
+*/
+
 .toast {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: rgb(171, 236, 171);
-  padding: 5px 20px;
+  background-color: rgb(92, 242, 222);
+  padding: 0 30px;
   border-radius: 25px;
-  border: 15px solid rgb(80, 231, 228);
+  border: 4px dashed rgb(236, 244, 132);
+  transition: all 0.75s linear;
 }
 
 .toast h4 {
-  font-size: 4rem;
-  color: #eea2b6;
+  font-size: 2.2rem;
+  color: #333;
   font-family: "Tektur", sans-serif;
+}
+
+.toast.out-effect {
+  animation: anim 1s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes anim {
+  0% {
+    border-color: rgb(236, 244, 132);
+    color: #333;
+    background-color: rgb(92, 242, 222);
+    transform: scale(1) translateY(0);
+  }
+
+  70% {
+    transform: scale(0.25) translateY(0);
+  }
+
+  100% {
+    background-color: black;
+    color: white;
+    border-color: white;
+    transform: scale(0.1) translate(2250px, 1250px);
+  }
 }

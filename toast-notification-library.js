@@ -8,7 +8,15 @@ function createToast(message, elementToAttach = body, removeTime = 5000) {
   toastEl.appendChild(writing);
   elementToAttach.appendChild(toastEl);
 
+  animateExit("out-effect", toastEl, 1000, removeTime);
+}
+
+function animateExit(effectClassName, element, timeOfEffect, timeToRemove) {
   setTimeout(() => {
-    toastEl.remove();
-  }, removeTime);
+    element.classList.add(effectClassName);
+  }, timeToRemove - timeOfEffect);
+
+  setTimeout(() => {
+    element.remove();
+  }, timeToRemove);
 }
