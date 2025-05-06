@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+/* The custom font to be used within the toast library */
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap");
 
-/* Old Colors
-rgb(80, 231, 228)
-#eea2b6
-rgb(171, 236, 171)
-*/
-
+/* Styling for the toast element */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -14,20 +10,23 @@ rgb(171, 236, 171)
   padding: 0 30px;
   border-radius: 25px;
   border: 4px dashed rgb(236, 244, 132);
-  transition: all 0.75s linear;
 }
 
+/* Styling for the heading inside the toast */
 .toast h4 {
   font-size: 2.2rem;
   color: #333;
   font-family: "Tektur", sans-serif;
+  font-weight: 600;
 }
 
+/* The class containing the animation to be applied near the end of the toast */
 .toast.out-effect {
   animation: anim 1s ease-in-out forwards;
   animation-iteration-count: 1;
 }
 
+/* The animation to be played when the toast disapears */
 @keyframes anim {
   0% {
     border-color: rgb(236, 244, 132);
