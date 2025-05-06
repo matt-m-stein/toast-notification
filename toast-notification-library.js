@@ -1,6 +1,9 @@
 // Shorthand for the body
 const body = document.body;
 
+// This is how long at the end of the toast the animation displays for in seconds
+const timeOfAnimationInSeconds = 0.9;
+
 // This function takes in a message, an element to attach to, and the time the popup should last for and creates a toast
 function createToast(message, elementToAttach = body, removeTime = 5000) {
   // Create a new div element
@@ -19,7 +22,12 @@ function createToast(message, elementToAttach = body, removeTime = 5000) {
   elementToAttach.appendChild(toastEl);
 
   // This function animates the toasts exit as well as removes it fro the DOM
-  animateExit("out-effect", toastEl, 1000, removeTime);
+  animateExit(
+    "out-effect",
+    toastEl,
+    timeOfAnimationInSeconds * 1000,
+    removeTime
+  );
 }
 
 // Give a class name, element, time the effect should last, and the time until the toast should be removed, create the JavaScript to create the animation
@@ -27,6 +35,10 @@ function animateExit(effectClassName, element, timeOfEffect, timeToRemove) {
   setTimeout(() => {
     // Add the effect class to the element
     element.classList.add(effectClassName);
+
+    // Set the length of the animation to play in seconds 's'
+    element.style.animationDuration = timeOfAnimationInSeconds + "s";
+    S;
 
     // It should start before the time to remove so that there is exactly enough time for the effect
   }, timeToRemove - timeOfEffect);
